@@ -126,7 +126,8 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     // set the active toast
     objc_setAssociatedObject(self, &CSToastActiveToastViewKey, toast, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    [self addSubview:toast];
+    //[self addSubview:toast];
+    [[UIApplication sharedApplication].keyWindow addSubview:toast];
     
     [UIView animateWithDuration:[[CSToastManager sharedStyle] fadeDuration]
                           delay:0.0
